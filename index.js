@@ -8,8 +8,8 @@ const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
 // ---------------------------------------
 const pdf = require('html-pdf');
-const options = {format: 'Letter'}
-// const html = fs.readFileSync('./new.html', 'utf8');
+// const html = fs.writeFileSync('new.html', 'utf8');
+const options = { format: 'Letter' };
 // -----------------------------------------------------
 async function getInfo(){
     try {
@@ -17,20 +17,24 @@ async function getInfo(){
             message: "Enter your Github username:",
             name: "username"
         });
+        let { color } = await inquirer.prompt({
+            message: "Enter your favorite color:",
+            name: "color"
+        });
         let { data } = await axios.get(
             `https://api.github.com/users/${username}`
         );
-        writeFileAsync('new.html', generate(data), function(err){
+        writeFileAsync('new.html', generate(data,color), function(err){
             if(err){
                 console.log(err);
             } else{
                 console.log("success");
             }
         });
-        // pdf.create(html, options).toFile('./githubProfileInfo.pdf', function(err, res) {
-        //     if (err) return console.log(err);
-        //     console.log(res);
-        // });
+        pdf.create('new.html', options).toFile('./githubprofile.pdf', function(err, res) {
+            if (err) return console.log(err);
+            console.log(res); // { filename: '/app/businesscard.pdf' }
+          });
     }
     catch(err){
         console.log(err)

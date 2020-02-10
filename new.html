@@ -1,5 +1,4 @@
-function createHTML(data,color){
-    return `<!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -13,18 +12,18 @@ function createHTML(data,color){
             background-color: white;
           }
           body{
-            background-color: ${color};
+            background-color: green;
           }
         </style>
     </head>
     <body>
     <div class="card text-center mx-5 mt-3">
-                    <h3>Github Username/Link: <a href="${data.html_url}">${data.login}</a></h3>
-                    <h3>Name: ${data.name}</h3>
-                    <h3>Location: ${data.location}</h3>
+                    <h3>Github Username/Link: <a href="https://github.com/loganveik">loganveik</a></h3>
+                    <h3>Name: Logan Veik</h3>
+                    <h3>Location: Arizona</h3>
                 </div>
                     <div class="profpic text-center mt-4">
-                        <img src="${data.avatar_url}" style="width:250px;height:250px;>
+                        <img src="https://avatars1.githubusercontent.com/u/57158351?v=4" style="width:250px;height:250px;>
                     </div>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 fixed-bottom mx-3">
@@ -32,7 +31,7 @@ function createHTML(data,color){
                   <div class="card">
                     <div class="card-body text-center" id="repo">
                       <h5 class="card-title">Public Repos:</h5>
-                      <h4>${data.public_repos}</h4>
+                      <h4>11</h4>
                     </div>
                   </div>
                 </div>
@@ -40,7 +39,7 @@ function createHTML(data,color){
                   <div class="card">
                     <div class="card-body text-center" id="gitstar">
                       <h5 class="card-title">Github Stars:</h5>
-                      <h4>${data.public_gists}</h4>
+                      <h4>0</h4>
                     </div>
                   </div>
                 </div>
@@ -48,7 +47,7 @@ function createHTML(data,color){
                   <div class="card">
                     <div class="card-body text-center" id="follower">
                       <h5 class="card-title">Followers:</h5>
-                      <h4>${data.followers}</h4>
+                      <h4>4</h4>
                     </div>
                   </div>
                 </div>
@@ -56,13 +55,11 @@ function createHTML(data,color){
                   <div class="card">
                     <div class="card-body text-center" id="following">
                       <h5 class="card-title">Following: </h5>
-                      <h4>${data.following}</h4>
+                      <h4>4</h4>
                     </div>
                   </div>
                 </div>
               </div>
         </div>
     </body>
-    </html>`
-}
-module.exports = createHTML
+    </html>
