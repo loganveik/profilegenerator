@@ -7,9 +7,9 @@ const fs = require("fs");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
 // ---------------------------------------
-const pdf = require('html-pdf');
+// const pdf = require('html-pdf');
 // const html = fs.writeFileSync('new.html', 'utf8');
-const options = { format: 'Letter' };
+// const options = { format: 'Letter' };
 // -----------------------------------------------------
 async function getInfo(){
     try {
@@ -31,10 +31,10 @@ async function getInfo(){
                 console.log("success");
             }
         });
-        pdf.create('new.html', options).toFile('./githubprofile.pdf', function(err, res) {
-            if (err) return console.log(err);
-            console.log(res); // { filename: '/app/businesscard.pdf' }
-          });
+        // pdf.create(html, options).toFile('./githubprofile.pdf', function(err, res) {
+        //     if (err) return console.log(err);
+        //     console.log(res); // { filename: '/app/businesscard.pdf' }
+        //   });
     }
     catch(err){
         console.log(err)
