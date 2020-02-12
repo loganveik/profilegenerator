@@ -8,7 +8,7 @@ const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
 // ---------------------------------------
 // const pdf = require('html-pdf');
-// const html = fs.writeFileSync('new.html', 'utf8');
+// const html = generate(data);
 // const options = { format: 'Letter' };
 // -----------------------------------------------------
 async function getInfo(){
